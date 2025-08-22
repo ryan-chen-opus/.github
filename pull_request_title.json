@@ -1,15 +1,15 @@
 {
   "LABEL": {
-    "name": "",
+    "name": "invalid-PR-title",
     "color": "#B60205"
   },
   "CHECKS": {
-    "regexp": "^(\\[.+?\\] )?(feat|hotfix|fix|docs|style|refactor|perf|test|chore|build|ci|revert): \\S.{10,70}$",
+    "regexp": "^(?:\\[[A-Z0-9_-]+?\\] )?(feat|fix|hotfix|docs|style|refactor|perf|test|chore|build|ci|revert)(\\([a-z0-9_-]+\\))?: [^\\s].{9,69}[^\\.\\s]$",
     "ignoreLabels": []
   },
   "MESSAGES": {
-    "success": "Pull request title is OK",
-    "failure": "Pull request title is invalid. Regex: /^(\\[.+?\\] )?(feat|hotfix|fix|docs|style|refactor|perf|test|chore|build|ci|revert): \\S.{10,70}$/",
-    "notice": ""
+    "success": "✅ PR title looks good!",
+    "failure": "❌ Invalid PR title. Must follow format: `<type>(scope): message` (10-70 chars, lowercase, no trailing period). Example: `feat(auth): add JWT login support`",
+    "notice": "ℹ️ Allowed types: feat, fix, hotfix, docs, style, refactor, perf, test, chore, build, ci, revert"
   }
 }
